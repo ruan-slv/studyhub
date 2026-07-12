@@ -1,4 +1,4 @@
-class Account {
+abstract class Account {
   protected account: number;
   protected owner: string;
   private balance: number;
@@ -20,8 +20,12 @@ class Account {
     console.log("-------------------------");
   }
 
-  public getBalance(): number {
+  get getBalance(): number {
     return this.balance;
+  }
+
+  set setBalance(balance: number) {
+    this.balance = balance;
   }
 
   protected deposit(value: number): void {
@@ -106,3 +110,7 @@ cnpj.withdraw(1000000);
 
 cpf.info();
 cnpj.info();
+
+cpf.setBalance = 900;
+
+console.log(`Total balance: R\$ ${cpf.getBalance}`);

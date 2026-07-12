@@ -18,8 +18,11 @@ class Account {
         console.log(`Owner..: ${this.owner}`);
         console.log("-------------------------");
     }
-    getBalance() {
+    get getBalance() {
         return this.balance;
+    }
+    set setBalance(balance) {
+        this.balance = balance;
     }
     deposit(value) {
         this.balance += value;
@@ -90,4 +93,6 @@ cpf.withdraw(1000000);
 cnpj.withdraw(1000000);
 cpf.info();
 cnpj.info();
+cpf.setBalance = 900;
+console.log(`Total balance: R\$ ${cpf.getBalance}`);
 //# sourceMappingURL=aula20a25.js.map
